@@ -1,5 +1,5 @@
 [package]
-name = "sort-characters-by-fFrequency"
+name = "sort-characters-by-frequency"
 version = "0.1.0"
 edition = "2021"
 

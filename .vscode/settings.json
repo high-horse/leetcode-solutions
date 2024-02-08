@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./perfect-squares-idk/Cargo.toml"
+    ]
+}
