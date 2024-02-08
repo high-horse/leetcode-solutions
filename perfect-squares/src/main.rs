@@ -23,7 +23,7 @@ fn main() {
     // Example usage:
     let n = 12;
     
-    // println!("Minimum number of perfect squares required to sum up to {}: {}", n, num_squares(n));
-    let mut dp = vec![i32::MAX; (n + 1) as usize];
-    println!("{:?}", dp);
+    println!("Minimum number of perfect squares required to sum up to {}: {}", n, num_squares(n));
+    // let mut dp = vec![i32::MAX; (n + 1) as usize];
+    // println!("{:?}", dp);
 }
