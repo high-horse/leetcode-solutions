@@ -13,7 +13,7 @@ pub fn rearrange_array(nums: Vec<i32>) -> Vec<i32> {
     }
     
     let mut i=0;
-    let length = positive.len();
+    let length cargo ();
     while i< length {
         result.push(positive[i]);
         result.push(negative[i]);
