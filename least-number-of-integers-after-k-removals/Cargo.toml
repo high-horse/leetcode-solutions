@@ -1,5 +1,5 @@
 [package]
-name = "least-number-of-integers-after-k"
+name = "least-number-of-integers-after-k-removals"
 version = "0.1.0"
 edition = "2021"
 
