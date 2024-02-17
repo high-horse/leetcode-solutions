@@ -1,3 +1,5 @@
+use std::collections::BinaryHeap;
+
 #[allow(unused)]
 fn main() {
     // let heights: Vec<i32> = vec![4,12,2,7,3,18,20,3,19];
@@ -19,7 +21,7 @@ fn main() {
     let ladders: i32 = 1;
     // let answer: i32 = furthest_building(heights.clone(), bricks.clone(), ladders.clone());
     // println!("case 3 => {}", answer);
-    let answer: i32 = furthest_building_2(heights.clone(), bricks.clone(), ladders.clone());
+    let answer: i32 = furthest_building_3(heights.clone(), bricks.clone(), ladders.clone());
 
     println!("case 3 => {}", answer);
     
@@ -128,3 +130,32 @@ pub fn furthest_building_2(heights: Vec<i32>, mut bricks: i32, mut ladders: i32)
 }
 
 
+#[allow(unused)]
+pub fn furthest_building_3(heights: Vec<i32>, bricks: i32, ladders: i32) -> i32 {
+    let mut bricks = bricks;
+    let mut ladders = ladders;
+
+    let mut difference: BinaryHeap<i32> = BinaryHeap::new();
+
+    let length = heights.len();
+
+    for i in 0..(length -1){
+        let diff = heights[i+1] - heights[i] ;
+        if diff <= 0{
+            continue;
+        }
+
+        difference.push(diff);
+
+        bricks -= diff;
+        if bricks < 0 && ladders > 0 {
+            bricks += difference.pop().unwrap();
+            ladders -= 1;
+        }
+        if bricks < 0 {
+            return i as i32;
+        }
+    }
+
+    (length-1) as i32
+}
