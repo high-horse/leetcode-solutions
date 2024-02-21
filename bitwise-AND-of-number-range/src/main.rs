@@ -18,7 +18,7 @@ fn main () {
  
  
 #[allow(unused)]
-pub fn range_bitwise_and(left: i32, right: i32) -> i32 {
+pub fn range_bitwise_and_(left: i32, right: i32) -> i32 {
     if left == right {
         return left;
     }
@@ -28,6 +28,21 @@ pub fn range_bitwise_and(left: i32, right: i32) -> i32 {
     }
 
     res
+}
+
+#[allow(unused)]
+pub fn range_bitwise_and(mut left: i32, mut right: i32) -> i32 {
+
+    while left < right {
+        println!("{}", right);
+        right &= right-1;
+        
+    }
+    // for i in (left..=right) {
+    //     res = res & i;
+    // }
+
+    right
 }
 
 
