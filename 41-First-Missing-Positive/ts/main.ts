@@ -2,9 +2,10 @@ function firstMissingPositive(nums: number[]): number {
     let n = nums.length;
     
     for (let i = 0; i < n; i++) {
-        if (nums[i] > 0 && nums[i] <= n && nums[i] !== nums[nums[i] - 1]) {
-            nums[i], nums[nums[i] - 1] = nums[nums[i] - 1], nums[i];
-            i--;
+        while (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] !== nums[i]) {
+            let temp = nums[i];
+            nums[i] = nums[nums[i] - 1];
+            nums[temp - 1] = temp;
         }
     }
     
@@ -16,3 +17,4 @@ function firstMissingPositive(nums: number[]): number {
     
     return n + 1;
 }
+
